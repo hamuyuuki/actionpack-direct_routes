@@ -1,0 +1,7 @@
+inherit_from:
+  - https://raw.githubusercontent.com/rails/rails/master/.rubocop.yml
+
+AllCops:
+  Exclude:
+    - activerecord-ignored_columns.gemspec
+    - test/dummy/**/*
