@@ -17,33 +17,31 @@ module ActionDispatch
           def url_options; {}; end
 
           private
+            def proxy
+              @proxy ||= proxy_class.new(@_routes)
+            end
 
-          def proxy
-            @proxy ||= proxy_class.new(@_routes)
-          end
+            def proxy_class
+              routes = @_routes
 
-          def proxy_class
-            routes = @_routes
+              Class.new do
+                include ActionDispatch::Routing::UrlFor
+                include routes.named_routes.path_helpers_module
+                include routes.named_routes.url_helpers_module
 
-            Class.new do
-              include ActionDispatch::Routing::UrlFor
-              include routes.named_routes.path_helpers_module
-              include routes.named_routes.url_helpers_module
+                attr_reader :_routes
 
-              attr_reader :_routes
+                def initialize(routes)
+                  @_routes = routes
+                end
 
-              def initialize(routes)
-                @_routes = routes
-              end
-
-              def optimize_routes_generation?
-                @_routes.optimize_routes_generation?
+                def optimize_routes_generation?
+                  @_routes.optimize_routes_generation?
+                end
               end
             end
-          end
         end
       end
     end
   end
 end
-

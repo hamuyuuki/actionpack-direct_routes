@@ -1,7 +1,11 @@
 inherit_from:
   - https://raw.githubusercontent.com/rails/rails/master/.rubocop.yml
 
+inherit_mode:
+  merge:
+    - Include
+    - Exclude
+
 AllCops:
   Exclude:
-    - activerecord-ignored_columns.gemspec
     - test/dummy/**/*
