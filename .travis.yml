@@ -1,0 +1,6 @@
+language: ruby
+rvm:
+  - 2.4.9
+script:
+  - bundle exec rake test TEST=test/integration/*
+
