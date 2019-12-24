@@ -12,7 +12,7 @@ module ActionDispatch
 
         def url_helpers(supports_path = true)
           super_module = super(supports_path)
-          super_module.singleton_class.prepend(RouteSet::UrlHelper)
+          super_module.singleton_class.prepend(RouteSet::UrlHelpers)
 
           super_module
         end
