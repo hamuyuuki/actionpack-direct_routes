@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/hamuyuuki/actionpack-direct_routes.svg?branch=master)](https://travis-ci.org/hamuyuuki/actionpack-direct_routes)
+[![Maintainability](https://api.codeclimate.com/v1/badges/37a26fb3d2dbec167997/maintainability)](https://codeclimate.com/github/hamuyuuki/actionpack-direct_routes/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/37a26fb3d2dbec167997/test_coverage)](https://codeclimate.com/github/hamuyuuki/actionpack-direct_routes/test_coverage)
 
 # actionpack-direct_routes
 `actionpack-direct_routes` backports Direct routes into Rails 4 and Rails 5.0.
