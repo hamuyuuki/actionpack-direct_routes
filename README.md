@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hamuyuuki/actionpack-direct_routes.svg?branch=master)](https://travis-ci.org/hamuyuuki/actionpack-direct_routes)
+
 # actionpack-direct_routes
 `actionpack-direct_routes` backports Direct routes into Rails 4 and Rails 5.0.
 
