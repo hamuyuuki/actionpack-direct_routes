@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "test_helper"
+
 require "active_support"
 require "active_support/test_case"
 require "active_support/testing/autorun"
