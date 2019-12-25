@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/actionpack-direct_routes.svg)](https://badge.fury.io/rb/actionpack-direct_routes)
+
 # actionpack-direct_routes
 `actionpack-direct_routes` backports Direct routes into Rails 4 and Rails 5.0.
 
