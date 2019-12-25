@@ -23,7 +23,7 @@ class RoutingTest < ActiveSupport::TestCase
     @app_template_path ||= File.join(File.expand_path("../", __dir__), "dummy")
   end
 
-  def app_file(path, contents, mode = 'w')
+  def app_file(path, contents, mode = "w")
     FileUtils.mkdir_p File.dirname("#{app_path}/#{path}")
     File.open("#{app_path}/#{path}", mode) do |f|
       f.puts contents
