@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
@@ -23,5 +25,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "minitest", "~> 5.1.0"
   s.add_development_dependency "rails", "~> 4.2.0"
   s.add_development_dependency "rubocop"
+  s.add_development_dependency "rubocop-performance"
+  s.add_development_dependency "rubocop-rails"
+  s.add_development_dependency "simplecov"
   s.add_development_dependency "sqlite3", "~> 1.3.0"
 end

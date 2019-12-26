@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - 2.4.9
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - bundle exec rake test TEST=test/integration/*
+  - bundle exec rake test TEST=test/application/* SECRET_KEY_BASE=$SECRET_KEY_BASE
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+

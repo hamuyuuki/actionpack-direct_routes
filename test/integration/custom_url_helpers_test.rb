@@ -1,4 +1,10 @@
+# frozen_string_literal: true
+
 require "test_helper"
+
+require File.expand_path("../../../test/dummy/config/environment.rb",  __FILE__)
+ActiveRecord::Migrator.migrations_paths = [File.expand_path("../../../test/dummy/db/migrate", __FILE__)]
+require "rails/test_help"
 
 class CustomUrlHelpersTest < ActionDispatch::IntegrationTest
   class Linkable
