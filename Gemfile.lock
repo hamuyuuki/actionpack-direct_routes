@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    actionpack-direct_routes (0.1.0)
+    actionpack-direct_routes (0.2.0)
       actionpack (~> 4.2.0)
       activesupport (~> 4.2.0)
 
