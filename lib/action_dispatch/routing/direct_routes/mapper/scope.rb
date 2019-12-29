@@ -5,8 +5,12 @@ module ActionDispatch
     module DirectRoutes
       module Mapper
         module Scope
+          def null?
+            @hash.nil? && @parent.nil?
+          end
+
           def root?
-            @parent == {}
+            @parent == {} || @parent.null?
           end
         end
       end
