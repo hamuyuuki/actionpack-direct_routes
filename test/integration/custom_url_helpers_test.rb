@@ -135,7 +135,7 @@ class CustomUrlHelpersTest < ActionDispatch::IntegrationTest
     @user = User.new
     @page = Page.new("6")
     @path_params = { "controller" => "pages", "action" => "index" }
-    @unsafe_params = ActionController::Parameters.new(@path_param)
+    @unsafe_params = ActionController::Parameters.new(@path_params)
     @safe_params = ActionController::Parameters.new(@path_params).permit(:controller, :action)
   end
 
