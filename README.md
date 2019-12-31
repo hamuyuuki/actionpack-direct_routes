@@ -33,10 +33,6 @@ end
 
 For details to [Rails Routing from the Outside In — Ruby on Rails Guides](https://guides.rubyonrails.org/routing.html#direct-routes)
 
-
-## Limitation
-You can backport Direct routes into Rails 4.2 only now.
-
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/hamuyuuki/actionpack-direct_routes. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
