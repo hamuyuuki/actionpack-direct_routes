@@ -19,11 +19,11 @@ Gem::Specification.new do |s|
   s.files = Dir["lib/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "actionpack", "~> 4.2.0"
-  s.add_dependency "activesupport", "~> 4.2.0"
+  s.add_dependency "actionpack", ">= 4.2", "< 5.1"
+  s.add_dependency "activesupport", ">= 4.2", "< 5.1"
 
+  s.add_development_dependency "appraisal"
   s.add_development_dependency "minitest", "~> 5.1.0"
-  s.add_development_dependency "rails", "~> 4.2.0"
   s.add_development_dependency "rubocop"
   s.add_development_dependency "rubocop-performance"
   s.add_development_dependency "rubocop-rails"
