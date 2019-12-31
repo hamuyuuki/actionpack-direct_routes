@@ -162,8 +162,14 @@ class CustomUrlHelpersTest < ActionDispatch::IntegrationTest
 
     assert_equal "/", params_path(@safe_params)
     assert_equal "/", Routes.url_helpers.params_path(@safe_params)
-    assert_raises(ActionController::UrlGenerationError) { params_path(@unsafe_params) }
-    assert_raises(ActionController::UrlGenerationError) { Routes.url_helpers.params_path(@unsafe_params) }
+
+    if Rails::VERSION::MAJOR == 4 && Rails::VERSION::MINOR == 2
+      assert_equal "/", params_path(@unsafe_params)
+      assert_equal "/", Routes.url_helpers.params_path(@unsafe_params)
+    elsif Rails::VERSION::MAJOR == 5 && Rails::VERSION::MINOR == 0
+      assert_raises(ArgumentError) { params_path(@unsafe_params) }
+      assert_raises(ArgumentError) { Routes.url_helpers.params_path(@unsafe_params) }
+    end
 
     assert_equal "/basket", symbol_path
     assert_equal "/basket", Routes.url_helpers.symbol_path
@@ -202,8 +208,14 @@ class CustomUrlHelpersTest < ActionDispatch::IntegrationTest
 
     assert_equal "http://www.example.com/", params_url(@safe_params)
     assert_equal "http://www.example.com/", Routes.url_helpers.params_url(@safe_params)
-    assert_raises(ActionController::UrlGenerationError) { params_url(@unsafe_params) }
-    assert_raises(ActionController::UrlGenerationError) { Routes.url_helpers.params_url(@unsafe_params) }
+
+    if Rails::VERSION::MAJOR == 4 && Rails::VERSION::MINOR == 2
+      assert_equal "http://www.example.com/", params_url(@unsafe_params)
+      assert_equal "http://www.example.com/", Routes.url_helpers.params_url(@unsafe_params)
+    elsif Rails::VERSION::MAJOR == 5 && Rails::VERSION::MINOR == 0
+      assert_raises(ArgumentError) { params_url(@unsafe_params) }
+      assert_raises(ArgumentError) { Routes.url_helpers.params_url(@unsafe_params) }
+    end
 
     assert_equal "http://www.example.com/basket", symbol_url
     assert_equal "http://www.example.com/basket", Routes.url_helpers.symbol_url
