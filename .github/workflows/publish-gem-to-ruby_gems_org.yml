@@ -2,8 +2,8 @@ name: Publish gem to RubyGems.org
 
 on:
   push:
-    branches:
-      - build-and-publish-gem-with-github_actions
+    tags:
+      - "*"
 
 jobs:
   build:
@@ -27,3 +27,6 @@ jobs:
 
     - name: Build gem
       run: gem build *.gemspec
+
+    - name: Push gem
+      run: gem push *.gem
