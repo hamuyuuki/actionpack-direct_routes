@@ -7,9 +7,11 @@ ActiveSupport.on_load(:before_initialize) do
   require "action_dispatch/routing/direct_routes/mapper/scope"
   require "action_dispatch/routing/direct_routes/route_set"
   require "action_dispatch/routing/direct_routes/route_set/named_route_collection"
+  require "action_dispatch/routing/direct_routes/url_for"
 
   ActionDispatch::Routing::Mapper.include(ActionDispatch::Routing::DirectRoutes::Mapper)
   ActionDispatch::Routing::Mapper::Scope.include(ActionDispatch::Routing::DirectRoutes::Mapper::Scope)
   ActionDispatch::Routing::RouteSet.prepend(ActionDispatch::Routing::DirectRoutes::RouteSet)
   ActionDispatch::Routing::RouteSet::NamedRouteCollection.include(ActionDispatch::Routing::DirectRoutes::RouteSet::NamedRouteCollection)
+  ActionDispatch::Routing::UrlFor.include(ActionDispatch::Routing::DirectRoutes::UrlFor)
 end

@@ -15,7 +15,7 @@ module ActionDispatch
 
           def call(t, args, only_path = false)
             options = args.extract_options!
-            url = t.url_for(eval_block(t, args, options))
+            url = t.full_url_for(eval_block(t, args, options))
 
             if only_path
               "/" + url.partition(%r{(?<!/)/(?!/)}).last
