@@ -1,0 +1,8 @@
+name-template: 'v0.3.1'
+tag-template: 'v0.3.1'
+branches:
+  - release
+template: |
+  ## What’s Changeds
+
+  $CHANGES
