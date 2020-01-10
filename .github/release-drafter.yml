@@ -1,5 +1,5 @@
-name-template: 'v0.3.1'
-tag-template: 'v0.3.1'
+name-template: 'v0.4.0'
+tag-template: 'v0.4.0'
 branches:
   - release
 template: |
