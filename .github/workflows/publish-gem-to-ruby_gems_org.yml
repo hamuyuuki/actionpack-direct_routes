@@ -3,7 +3,7 @@ name: Publish gem to RubyGems.org
 on:
   push:
     branches:
-      - master
+      - release
 
 jobs:
   build:
