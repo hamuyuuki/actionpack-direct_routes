@@ -11,18 +11,18 @@ Rails 5.1 adds Direct routes that you can create custom URL helpers directly.
 
 ## Getting Started
 Install `actionpack-direct_routes` at the command prompt:
-```
+```sh
 gem install actionpack-direct_routes
 ```
 
 Or add `actionpack-direct_routes` to your Gemfile:
-```
+```ruby
 gem "actionpack-direct_routes"
 ```
 
 ## How to use
 You can create custom URL helpers directly. For example:
-```
+```ruby
 direct :homepage do
   "http://www.rubyonrails.org"
 end
