@@ -108,6 +108,7 @@ class CustomUrlHelpersTest < ActionDispatch::IntegrationTest
     direct("string")  { "http://www.rubyonrails.org" }
     direct(:helper)   { basket_url }
     direct(:linkable) { |linkable| [:"#{linkable.linkable_type}", { id: linkable.id }] }
+    direct(:nested)   { |linkable| route_for(:linkable, linkable) }
     direct(:params)   { |params| params }
     direct(:symbol)   { :basket }
     direct(:hash)     { { controller: "basket", action: "show" } }
@@ -160,6 +161,9 @@ class CustomUrlHelpersTest < ActionDispatch::IntegrationTest
     assert_equal "/products/3", linkable_path(@product)
     assert_equal "/products/3", Routes.url_helpers.linkable_path(@product)
 
+    assert_equal "/categories/1", nested_path(@category)
+    assert_equal "/categories/1", Routes.url_helpers.nested_path(@category)
+
     assert_equal "/", params_path(@safe_params)
     assert_equal "/", Routes.url_helpers.params_path(@safe_params)
 
@@ -205,6 +209,9 @@ class CustomUrlHelpersTest < ActionDispatch::IntegrationTest
     assert_equal "http://www.example.com/collections/2", Routes.url_helpers.linkable_url(@collection)
     assert_equal "http://www.example.com/products/3", linkable_url(@product)
     assert_equal "http://www.example.com/products/3", Routes.url_helpers.linkable_url(@product)
+
+    assert_equal "http://www.example.com/categories/1", nested_url(@category)
+    assert_equal "http://www.example.com/categories/1", Routes.url_helpers.nested_url(@category)
 
     assert_equal "http://www.example.com/", params_url(@safe_params)
     assert_equal "http://www.example.com/", Routes.url_helpers.params_url(@safe_params)
