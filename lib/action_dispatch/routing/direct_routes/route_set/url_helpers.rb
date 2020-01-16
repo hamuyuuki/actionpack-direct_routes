@@ -13,6 +13,10 @@ module ActionDispatch
             proxy.full_url_for(options)
           end
 
+          def route_for(name, *args)
+            proxy.route_for(name, *args)
+          end
+
           def optimize_routes_generation?
             proxy.optimize_routes_generation?
           end
