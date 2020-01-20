@@ -1,10 +1,9 @@
-version: '3'
+version: "3"
 services:
-  gem:
+  actionpack-direct_routes:
     build: .
-    command: bash
     volumes:
-      - ./:/usr/src/app
+      - ./:/usr/local/src/actionpack-direct_routes
       - bundle:/usr/local/bundle
     tty: true
 volumes:
