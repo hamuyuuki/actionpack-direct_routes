@@ -2,6 +2,6 @@
 linter:
   rubocop:
     gems:
+      - "rubocop-packaging"
       - "rubocop-performance"
       - "rubocop-rails"
-
